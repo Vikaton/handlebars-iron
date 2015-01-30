@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="rustdoc">
+    <meta name="description" content="API documentation for the Rust `HandlebarsEngine` struct in crate `handlebars-iron`.">
+    <meta name="keywords" content="rust, rustlang, rust-lang, HandlebarsEngine">
+
+    <title>handlebars-iron::HandlebarsEngine - Rust</title>
+
+    <link rel="stylesheet" type="text/css" href="../main.css">
+
+    
+    
+</head>
+<body class="rustdoc">
+    <!--[if lte IE 8]>
+    <div class="warning">
+        This old browser is unsupported and will most likely display funky
+        things.
+    </div>
+    <![endif]-->
+
+    
+
+    <section class="sidebar">
+        
+        <p class='location'><a href='index.html'>handlebars-iron</a></p><div class='block struct'><h2>Structs</h2><a class='struct current' href='struct.HandlebarsEngine.html' title=''>HandlebarsEngine</a><a class='struct ' href='struct.Template.html' title=''>Template</a></div>
+    </section>
+
+    <nav class="sub">
+        <form class="search-form js-only">
+            <div class="search-container">
+                <input class="search-input" name="search"
+                       autocomplete="off"
+                       placeholder="Click or press 'S' to search, '?' for more options..."
+                       type="search">
+            </div>
+        </form>
+    </nav>
+
+    <section id='main' class="content struct">
+<h1 class='fqn'><span class='in-band'>Struct <a href='index.html'>handlebars-iron</a>::<wbr><a class='struct' href=''>HandlebarsEngine</a><wbr></span><span class='out-of-band'><span id='render-detail'>
+            <a id="collapse-all" href="#">[-]
+            </a>&nbsp;<a id="expand-all" href="#">[+]</a>
+        </span><a id='src-33' href='../src/handlebars-iron/middleware.rs.html#19-21'>[src]</a></span></h1>
+<pre class='rust struct'>pub struct HandlebarsEngine {
+    // some fields omitted
+}</pre><h2 id='methods'>Methods</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='struct' href='../handlebars-iron/struct.HandlebarsEngine.html' title='handlebars-iron::HandlebarsEngine'>HandlebarsEngine</a></code></h3><div class='impl-items'><h4 id='method.new' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.new' class='fnname'>new</a>(prefix: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>, suffix: &amp;<a href='http://doc.rust-lang.org/nightly/std/primitive.str.html'>str</a>) -&gt; <a class='struct' href='../handlebars-iron/struct.HandlebarsEngine.html' title='handlebars-iron::HandlebarsEngine'>HandlebarsEngine</a></code></h4>
+</div><h2 id='implementations'>Trait Implementations</h2><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='../typemap/trait.Key.html' title='typemap::Key'>Key</a> for <a class='struct' href='../handlebars-iron/struct.HandlebarsEngine.html' title='handlebars-iron::HandlebarsEngine'>HandlebarsEngine</a></code></h3><div class='impl-items'><h4 id='assoc_type.Value' class='type'><a class='stability Unmarked' title='No stability level'></a><code>type Value = <a class='struct' href='../handlebars-iron/struct.Template.html' title='handlebars-iron::Template'>Template</a></code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='../plugin/trait.Plugin.html' title='plugin::Plugin'>PluginFor</a>&lt;<a class='struct' href='../iron/response/struct.Response.html' title='iron::response::Response'>Response</a>&gt; for <a class='struct' href='../handlebars-iron/struct.HandlebarsEngine.html' title='handlebars-iron::HandlebarsEngine'>HandlebarsEngine</a></code></h3><div class='impl-items'><h4 id='method.eval' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.eval' class='fnname'>eval</a>(resp: &amp;mut <a class='struct' href='../iron/response/struct.Response.html' title='iron::response::Response'>Response</a>, _: <a class='struct' href='../phantom/struct.Phantom.html' title='phantom::Phantom'>Phantom</a>&lt;<a class='struct' href='../handlebars-iron/struct.HandlebarsEngine.html' title='handlebars-iron::HandlebarsEngine'>HandlebarsEngine</a>&gt;) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/option/enum.Option.html' title='core::option::Option'>Option</a>&lt;<a class='struct' href='../handlebars-iron/struct.Template.html' title='handlebars-iron::Template'>Template</a>&gt;</code></h4>
+</div><h3 class='impl'><a class='stability Unmarked' title='No stability level'></a><code>impl <a class='trait' href='../iron/middleware/trait.AfterMiddleware.html' title='iron::middleware::AfterMiddleware'>AfterMiddleware</a> for <a class='struct' href='../handlebars-iron/struct.HandlebarsEngine.html' title='handlebars-iron::HandlebarsEngine'>HandlebarsEngine</a></code></h3><div class='impl-items'><h4 id='method.after' class='method'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#method.after' class='fnname'>after</a>(&amp;self, _: &amp;mut <a class='struct' href='../iron/request/struct.Request.html' title='iron::request::Request'>Request</a>, r: <a class='struct' href='../iron/response/struct.Response.html' title='iron::response::Response'>Response</a>) -&gt; <a class='type' href='../iron/type.IronResult.html' title='iron::IronResult'>IronResult</a>&lt;<a class='struct' href='../iron/response/struct.Response.html' title='iron::response::Response'>Response</a>&gt;</code></h4>
+<h4 id='method.catch' class='tymethod'><a class='stability Unmarked' title='No stability level'></a><code>fn <a href='#tymethod.catch' class='fnname'>catch</a>(&amp;self, &amp;mut <a class='struct' href='../iron/request/struct.Request.html' title='iron::request::Request'>Request</a>, err: <a class='struct' href='../iron/error/struct.IronError.html' title='iron::error::IronError'>IronError</a>) -&gt; <a class='enum' href='http://doc.rust-lang.org/nightly/core/result/enum.Result.html' title='core::result::Result'>Result</a>&lt;<a class='struct' href='../iron/response/struct.Response.html' title='iron::response::Response'>Response</a>, <a class='struct' href='../iron/error/struct.IronError.html' title='iron::error::IronError'>IronError</a>&gt;</code></h4>
+</div></section>
+    <section id='search' class="content hidden"></section>
+
+    <section class="footer"></section>
+
+    <div id="help" class="hidden">
+        <div class="shortcuts">
+            <h1>Keyboard shortcuts</h1>
+            <dl>
+                <dt>?</dt>
+                <dd>Show this help dialog</dd>
+                <dt>S</dt>
+                <dd>Focus the search field</dd>
+                <dt>&larrb;</dt>
+                <dd>Move up in search results</dd>
+                <dt>&rarrb;</dt>
+                <dd>Move down in search results</dd>
+                <dt>&#9166;</dt>
+                <dd>Go to active search result</dd>
+            </dl>
+        </div>
+        <div class="infos">
+            <h1>Search tricks</h1>
+            <p>
+                Prefix searches with a type followed by a colon (e.g.
+                <code>fn:</code>) to restrict the search to a given type.
+            </p>
+            <p>
+                Accepted types are: <code>fn</code>, <code>mod</code>,
+                <code>struct</code>, <code>enum</code>,
+                <code>trait</code>, <code>typedef</code> (or
+                <code>tdef</code>).
+            </p>
+        </div>
+    </div>
+
+    
+
+    <script>
+        window.rootPath = "../";
+        window.currentCrate = "handlebars-iron";
+        window.playgroundUrl = "";
+    </script>
+    <script src="../jquery.js"></script>
+    <script src="../main.js"></script>
+    
+    <script async src="../search-index.js"></script>
+</body>
+</html>
